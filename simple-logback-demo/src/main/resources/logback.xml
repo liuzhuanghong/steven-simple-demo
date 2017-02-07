@@ -23,10 +23,17 @@
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<!-- 正在记录的日志文件的路径及文件名 -->
 		<file>${LOG_HOME}/simple-logback-demo.log</file>
+		<!--日志文件最大的大小 -->
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>1MB</MaxFileSize>
+			<totalSizeCap>2MB</totalSizeCap>
+		</triggeringPolicy>
 		<rollingPolicy
 			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
 			<!-- 每天一归档 -->
-			<fileNamePattern>${LOG_HOME}/simple-logback-demo.log-%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
+			<fileNamePattern>${LOG_HOME}/simple-logback-demo.log-%d{yyyy-MM-dd}.%i.txt
+			</fileNamePattern>
 			<!-- 单个日志文件最多 100MB, 60天的日志周期，最大不能超过20GB -->
 			<maxFileSize>1MB</maxFileSize>
 			<maxHistory>60</maxHistory>
