@@ -14,22 +14,37 @@
 </style>
 <!-- <script src="https://openlayers.org/en/v3.20.1/build/ol.js"
 	type="text/javascript"></script> -->
-<title>OpenLayers 3 simple example</title>
+<title>simple bing map</title>
 </head>
 <body>
 	<h2>My Map</h2>
 	<div id="map" class="map"></div>
 	<script type="text/javascript">
 		var map = new ol.Map({
-			target : 'map',
-			layers : [ new ol.layer.Tile({
-				source : new ol.source.OSM()
-			}) ],
+			target : "map",
+			layer : [],
 			view : new ol.View({
 				center : ol.proj.fromLonLat([ 114.41, 22.28 ]),
-				zoom : 4
+				zoom : 6
 			})
 		});
+		var key = "AuUKioHoVzV-16Ep0yv6ay21ixWZ5OZ7jDs-k7g03fiUMbN6GSH97IpRcQ_s_s3-";
+		var BingMapRoad = new ol.layer.Tile({
+			source : new ol.source.BingMaps({
+				key : key,
+				imagerySet : 'Road'
+			}),
+			name : 'BingMap的道路图层'
+		});
+		var BingMapAerial = new ol.layer.Tile({
+			source : new ol.source.BingMaps({
+				key : key,
+				imagerySet : 'Aerial'
+			}),
+			name : 'BingMap的影像图层'
+		});
+		map.addLayer(BingMapAerial);
+		map.addLayer(BingMapRoad);
 	</script>
 </body>
 </html>
