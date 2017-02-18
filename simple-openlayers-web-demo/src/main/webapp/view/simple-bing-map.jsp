@@ -1,5 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!doctype html>
-<html lang="en">
+<html lang="zh">
 <head>
 <link href="../3rd/ol3.13.1/ol.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../3rd/ol3.13.1/ol.js"
@@ -17,7 +19,7 @@
 <title>simple bing map</title>
 </head>
 <body>
-	<h2>My Map</h2>
+	<h2>加载bing地图</h2>
 	<div id="map" class="map"></div>
 	<script type="text/javascript">
 		var map = new ol.Map({

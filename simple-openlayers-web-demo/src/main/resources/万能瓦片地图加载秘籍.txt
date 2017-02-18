@@ -1,0 +1,6 @@
+http://anzhihun.coding.me/ol3-primer/ch05/05-03.html
+
+OpenLayers 3提供了ol.source.XYZ这种通用的Source来适应广大的在线瓦片地图数据源，具备很好的适用性。
+通常情况下，开发者想要加载不同的在线瓦片地图源，则只需要更改ol.source.XYZ的构造参数中url就可以了。
+比如我们就可以不用ol.source.OSM，而用ol.source.XYZ来加载Open Street Map地图，结果一样。
+ 
