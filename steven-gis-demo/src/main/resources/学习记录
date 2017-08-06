@@ -3,3 +3,9 @@ http://blog.csdn.net/zhujianlin1990/article/details/58600603
 
 查找坐标点位置
 http://www.gpsspg.com/maps.htm
+
+Package net.sf.geographiclib
+https://geographiclib.sourceforge.io/html/java/
+
+一个算距离的帖子
+https://gis.stackexchange.com/questions/156465/calculate-distance-with-jts
