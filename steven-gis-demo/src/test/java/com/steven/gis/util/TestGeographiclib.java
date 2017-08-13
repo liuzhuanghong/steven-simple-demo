@@ -82,7 +82,7 @@ public class TestGeographiclib {
 
 	}
 
-	@Test
+	// @Test
 	public void testArea() {
 		PolygonArea p = new PolygonArea(Geodesic.WGS84, false);
 		p.AddPoint(HW_F_WEST_LAT, HW_F_WEST_LON);
