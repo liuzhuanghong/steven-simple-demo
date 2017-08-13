@@ -1,4 +1,4 @@
-package com.steveb.gis.util;
+package com.steven.gis.util;
 
 import net.sf.geographiclib.Geodesic;
 import net.sf.geographiclib.GeodesicData;

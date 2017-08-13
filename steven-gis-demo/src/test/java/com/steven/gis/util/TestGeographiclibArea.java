@@ -2,7 +2,7 @@ package com.steven.gis.util;
 
 import org.junit.Test;
 
-import com.steveb.gis.util.GeographicLibUtil;
+import com.steven.gis.util.GeographicLibUtil;
 
 import net.sf.geographiclib.Geodesic;
 import net.sf.geographiclib.GeodesicData;

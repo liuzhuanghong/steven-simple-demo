@@ -2,7 +2,7 @@ package com.steven.gis.util;
 
 import org.junit.Test;
 
-import com.steveb.gis.util.GeoUtil;
+import com.steven.gis.util.GeoUtil;
 
 public class TestGeoUtil {
 
