@@ -9,6 +9,11 @@ import org.apache.hadoop.fs.Path;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * 学习HDFS的API相关操作
+ * @author pc
+ *
+ */
 public class TestHdfsClient {
 
 	FileSystem fs = null;
