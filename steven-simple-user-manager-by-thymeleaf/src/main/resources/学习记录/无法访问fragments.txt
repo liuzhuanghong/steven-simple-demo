@@ -1,2 +1,11 @@
 应该是thymeleaf方言和版本的问题：
 org.thymeleaf.exceptions.TemplateInputException: Error resolving template "~{fragments/header", template might not exist or might not be accessible by any of the configured Template Resolvers (users/list:8)
+
+问题1 
+描述(版本问题)：spring-boot项目整合thymeleaf后，pom文件中的spring-boot-starter-thymeleaf中已经包含了thymeleaf，但是版本是2.0的，现在需要升级到3.0；
+解决办法：在pom.xml的properties中添加thymeleaf的版本号
+<properties>
+        <java.version>1.8</java.version>
+        <thymeleaf.version>3.0.3.RELEASE</thymeleaf.version>
+        <thymeleaf-layout-dialect.version>2.2.0</thymeleaf-layout-dialect.version>
+    </properties>
