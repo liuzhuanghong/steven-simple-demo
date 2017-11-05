@@ -1,4 +1,4 @@
-城市ID列表
+城市ID列表（网站：http://cj.weather.com.cn/support/detail.aspx?id=51837fba1b35fe0f8411b6df）
 
 citycode 城市 二级  一级
 
