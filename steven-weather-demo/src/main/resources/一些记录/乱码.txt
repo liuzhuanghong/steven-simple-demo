@@ -1,0 +1,69 @@
+一些坑：
+从网上获取到的一些字符串，是乱码的，下面的一个例子可以解决。
+
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+/**
+ * 根据网上代码，测试如何解决乱码的问题
+ * 
+ * @author Steven
+ *
+ */
+public class CodesetTest {
+
+	public static void main(String[] args) throws ClientProtocolException, IOException {
+		getInfo();
+	}
+
+	public static void getInfo() throws ClientProtocolException, IOException {
+		String htmlStr = getHtmlFile("http://www.weather.com.cn/data/cityinfo/101010100.html");
+		try {
+			// ISO-8859-1
+			// city":"北京","cityid":"101010100","temp1":"25�?,"temp2":"17�?,"weather":"小到中雨转阵�?,
+			// utf-8
+			// {"weatherinfo":{"city":"鍖椾�?,"cityid":"101010100","temp1":"25鈩�,"temp2":"17鈩�,"weather":"灏忓埌涓洦杞�?���?
+			byte b[] = htmlStr.getBytes("utf-8");
+			htmlStr = new String(b);
+		} catch (Exception e) {
+			e.printStackTrace();
+			e.getMessage();
+		}
+		System.out.println(htmlStr);
+	}
+
+	public static String getHtmlFile(String url) throws ClientProtocolException, IOException {
+		String result = "";
+		DefaultHttpClient httpClient = new DefaultHttpClient();
+		HttpResponse httpResponse;
+		HttpGet httpGet = new HttpGet(url);
+		HttpEntity httpEntity;
+
+		InputStream is = null;
+		// ʹ�ÿͻ��˷�������
+
+		httpResponse = httpClient.execute(httpGet);
+		httpEntity = httpResponse.getEntity();
+		is = httpEntity.getContent();
+		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+		String line = "";
+		while ((line = reader.readLine()) != null) {
+			result = result + line;
+		}
+
+		return result;
+
+	}
+
+}
+
+

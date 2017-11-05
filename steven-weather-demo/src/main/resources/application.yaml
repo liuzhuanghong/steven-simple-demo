@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: dev
+  jackson:
+    parser:
+      ALLOW_UNQUOTED_CONTROL_CHARS: true
+
+WEARTHER_URI: http://www.weather.com.cn/data/cityinfo
